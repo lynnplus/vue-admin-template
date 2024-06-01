@@ -1,10 +1,5 @@
-import { MethodType, MockConfig, MockMethod, Recordable } from 'vite-plugin-mock'
-
-export type ResponseData<T> = {
-  code: number
-  msg?: string
-  data?: T
-}
+import type { MethodType, MockConfig, MockMethod, Recordable } from 'vite-plugin-mock'
+import type { ResponseData } from 'axios'
 
 export class ResponseError extends Error {
   readonly code: number
@@ -68,11 +63,11 @@ function mockInvoke<D>(
     url: config.env.VITE_APP_BASE_API + url,
     method: method,
     timeout: timeout,
-    response: (opt) => {
+    response: (opt: any) => {
       try {
         const d = handler(opt, config)
         return new RespData(d)
-      } catch (e) {
+      } catch (e: any) {
         if (e instanceof ResponseError) {
           return new RespData(null, e.code, e.message)
         }

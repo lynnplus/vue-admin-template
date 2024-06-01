@@ -9,11 +9,16 @@ import App from './App.vue'
 import router from './router'
 import '@/styles/index.scss'
 import 'virtual:svg-icons-register'
+import { loadMockServer } from '../mock/_prodMock'
 
 const app = createApp(App)
 
-app
-  .use(createPinia().use(piniaPluginPersistedstate))
-  .use(router)
-  .use(ElementPlus, { locale: zhCn })
-  .mount('#app')
+app.use(createPinia().use(piniaPluginPersistedstate)).use(router).use(ElementPlus, { locale: zhCn })
+console.log(import.meta.env)
+if (import.meta.env.MODE === 'github') {
+  loadMockServer().then(() => {
+    app.mount('#app')
+  })
+} else {
+  app.mount('#app')
+}

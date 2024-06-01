@@ -32,10 +32,8 @@ export default defineConfig(({ mode }) => {
       vue(),
       vueJsx(),
       viteMockServe({
-        enable: mode === 'development' && env.ENABLE_MOCK === 'true',
-        ignore(fileName) {
-          return fileName === 'utils.ts'
-        }
+        enable: mode === 'development' || env.ENABLE_MOCK === 'true',
+        ignore: /^_/
       }),
       visualizer(),
       createSvgIconsPlugin({
