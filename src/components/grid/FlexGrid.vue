@@ -173,6 +173,7 @@ function onScroll(v: { scrollTop: number; scrollLeft: number }) {
       :is="rowTag"
       type="flex"
       v-infinite-scroll="loadData"
+      :infinite-scroll-distance="40"
       :infinite-scroll-disabled="disableLoad"
       v-if="data && data.total > 0"
       :style="rowStyle"
