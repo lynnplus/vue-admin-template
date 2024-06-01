@@ -18,10 +18,13 @@ vue-admin-template is a free and open source front-end template that uses the la
 ```bash
 # clone repo
 git clone https://github.com/lynnplus/vue-admin-template.git
+
 #enter project dir
 cd vue-admin-template
+
 #install dependency
 npm install
+
 #develop
 npm run dev
 ```
