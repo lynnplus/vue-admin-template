@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
         [env.VITE_APP_BASE_API]: { target: env.VITE_APP_API_TARGET_URL }
       }
     },
+    base: env.VITE_PUBLIC_PATH,
     plugins: [
       vue(),
       vueJsx(),
