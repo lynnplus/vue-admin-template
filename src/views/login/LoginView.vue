@@ -5,7 +5,6 @@ import { type LoginRequest } from '@/api/account'
 import { useUserStore } from '@/stores/user'
 import type VerifyCodeView from '@/components/VerifyCodeView.vue'
 import { ResponseError } from '@/utils/request'
-import DarkSwitch from '@/layout/header/DarkSwitch.vue'
 
 const loginForm = ref<FormInstance>()
 const verifyCodeInstance = ref<InstanceType<typeof VerifyCodeView>>()
@@ -166,8 +165,13 @@ function getRedirect(): string | undefined {
 .verify-code-input {
   height: var(--el-input-height);
   overflow: hidden;
+
+  :deep(.el-input__suffix) {
+    position: absolute;
+    right: 15px;
+  }
   :deep(.el-input-group__append) {
-    padding: 2px;
+    padding: 0;
   }
 }
 
@@ -175,7 +179,14 @@ function getRedirect(): string | undefined {
   overflow: hidden;
   width: 12rem;
   height: 100%;
-  border-radius: var(--el-input-border-radius);
+
+  :deep(.verify-code_refresh) {
+    border-radius: var(--el-input-border-radius);
+    box-shadow:
+      0 1px 0 0 var(--el-input-border-color) inset,
+      0 -1px 0 0 var(--el-input-border-color) inset,
+      -1px 0 0 0 var(--el-input-border-color) inset;
+  }
 }
 
 .login-btn {
