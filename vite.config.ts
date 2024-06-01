@@ -56,6 +56,17 @@ export default defineConfig(({ mode }) => {
           additionalData: `@use "@/styles/element_ui.scss" as *;`
         }
       }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: (id: string) => {
+            if (id.includes('node_modules/element-plus')) {
+              return 'vendor-eui'
+            }
+          }
+        }
+      }
     }
   }
 })
