@@ -21,7 +21,6 @@ const alias: Record<string, string> = {
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  console.debug('', env.VITE_APP_BASE_API, env.VITE_APP_API_TARGET_URL, mode)
   return {
     server: {
       proxy: {
