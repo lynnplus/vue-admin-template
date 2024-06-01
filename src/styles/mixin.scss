@@ -1,0 +1,26 @@
+
+
+$sm: 768px !default;
+$md: 992px !default;
+$lg: 1200px !default;
+$xl: 1920px !default;
+
+$breakpoints: (
+        'xs': '(max-width: #{$sm - 1})',
+        'sm': '(min-width: #{$sm})',
+        'md': '(min-width: #{$md})',
+        'lg': '(min-width: #{$lg})',
+        'xl': '(min-width: #{$xl})'
+) !default;
+
+$screen_size_preset: xs,sm,md,lg,xl;
+
+@mixin screen_size($key, $map: $breakpoints) {
+  @if map-has-key($map, $key) {
+    @media only screen and #{unquote(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefined points: `#{$map}`";
+  }
+}
