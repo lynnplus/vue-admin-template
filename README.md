@@ -1,28 +1,28 @@
 # vue-admin-template
 
-This template should help get you started developing with Vue 3 in Vite.
+[![GitHub package.json prod dependency version](https://img.shields.io/github/package-json/dependency-version/lynnplus/vue-admin-template/vue)](https://github.com/vuejs/core)
+[![GitHub package.json prod dependency version](https://img.shields.io/github/package-json/dependency-version/lynnplus/vue-admin-template/element-plus)](https://github.com/element-plus/element-plus)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/lynnplus/vue-admin-template)
+[![GitHub](https://img.shields.io/github/license/lynnplus/vue-admin-template)](https://github.com/lynnplus/vue-admin-template/blob/master/LICENSE)
 
-## Recommended IDE Setup
+This is a background management interface template based on Vue3 and element-plus
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Introduction
 
-## Type Support for `.vue` Imports in TS
+[Preview Demo](https://lynnplus.github.io/vue-admin-template)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+vue-admin-template is a free and open source front-end template that uses the latest technologies such as Vue3, element-plus and Typescript to provide out-of-the-box front-end solutions.
 
 ## Project Setup
 
-```sh
+```bash
+# clone repo
+git clone https://github.com/lynnplus/vue-admin-template.git
+#enter project dir
+cd vue-admin-template
+#install dependency
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+#develop
 npm run dev
 ```
 
